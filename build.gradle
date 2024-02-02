@@ -7,6 +7,7 @@ plugins {
     id 'jacoco'
 }
 
+
 group = 'com.crio'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -30,14 +31,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:2.7.1'
     compileOnly 'org.projectlombok:lombok:1.18.24'
     testImplementation 'com.h2database:h2:2.1.214'
+    implementation 'org.hibernate.validator:hibernate-validator:6.2.0.Final' // Use the latest version available
+
 
     implementation 'mysql:mysql-connector-java:8.0.29'
 
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.1'
-    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.7.1'
-    testImplementation 'org.springframework.amqp:spring-rabbit-test:2.7.1'
+    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
+    testImplementation 'org.springframework.amqp:spring-rabbit-test'
 }
+
+
 
 // Helps faster load times in Crio workspace.
 allprojects {
